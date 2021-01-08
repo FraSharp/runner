@@ -15,7 +15,7 @@ jobs:
          
        - name: run bot kkj
          run: |
-           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
+           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
            git clone https://github.com/aktham3210/Rust-5X bot
            cd bot
            git clone https://github.com/erfanoabdi/ErfanGSIs
