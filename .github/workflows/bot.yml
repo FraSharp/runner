@@ -3,8 +3,8 @@ name: setting up environment
 on: [push]
 
 env:
-  token: ${ secrets.TOKEN }
-  owner_id: ${ secrets.OWNER_ID }
+  token: ${{ secrets.TOKEN }}
+  owner_id: ${{ secrets.OWNER_ID }}
 
 jobs:
   build:
