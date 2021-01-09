@@ -10,17 +10,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - name: Checkout
-         uses: actions/checkout@main
-         
-       - name: run bot kkj
-         run: |
-           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
-           git clone https://github.com/aktham3210/Rust-5X bot
-           cd bot
-           git clone https://github.com/erfanoabdi/ErfanGSIs
-           curl -sL https://git.io/file-transfer | sh
-           export TELOXIDE_TOKEN=$token
-           export OWNER_ID=1469015383
-           export RUST_BACKTRACE=1
-           cargo run
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        
+    - name: run the bot
+      run: | 
+             curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
+             git clone https://github.com/aktham3210/Rust-5X bot
+             cd bot
+             git clone https://github.com/erfanoabdi/ErfanGSIs
+             curl -sL https://git.io/file-transfer | sh
+             export TELOXIDE_TOKEN=$token
+             export OWNER_ID=1469015383
+             export RUST_BACKTRACE=1
+             cargo run
