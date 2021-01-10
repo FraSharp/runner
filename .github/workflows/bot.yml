@@ -19,7 +19,7 @@ jobs:
     - name: run the bot
       run: | 
              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
-             git clone https://github.com/aktham3210/Rust-5X bot
+             git clone https://github.com/Velosh/ErfanGSIs-VelanGSIs ErfanGSIs
              cd bot
              git clone https://github.com/erfanoabdi/ErfanGSIs
              curl -sL https://git.io/file-transfer | sh
