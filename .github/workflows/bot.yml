@@ -19,7 +19,9 @@ jobs:
     - name: run the bot
       continue-on-error: true
       timeout-minutes: 400
-      run: | 
+      run: |
+             git config --global user.email "akthoamaaa14@gmail.com"
+             git config --global user.name "cytolytic" 
              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
              git clone https://github.com/aktham3210/Rust-5X bot
              cd bot
