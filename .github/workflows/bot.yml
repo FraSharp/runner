@@ -35,7 +35,7 @@ jobs:
       timeout-minutes: 5
       run: | 
         mkdir bruh;cd bruh
-        sudo apt install expect
+        sudo apt install expect -y
         git clone https://github.com/aktham3210/runner nerd
         cd nerd
         echo "lool" >> k.txt
