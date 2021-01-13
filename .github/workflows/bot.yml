@@ -16,6 +16,13 @@ jobs:
       with:
         python-version: 3.8
 
+    - name: set vars
+      continue-on-error: true
+      timeout-minutes: 2
+      run: |
+             export TELOXIDE_TOKEN=$token
+             export OWNER_ID=1469015383
+             
     - name: run the bot
       continue-on-error: true
       timeout-minutes: 400
@@ -27,8 +34,6 @@ jobs:
              cd bot
              git clone https://github.com/erfanoabdi/ErfanGSIs
              curl -sL https://git.io/file-transfer | sh
-             export TELOXIDE_TOKEN=$token
-             export OWNER_ID=1469015383
              cargo run
              
     - name: loop
