@@ -15,8 +15,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-        
+
     - name: run the bot
+      continue-on-error: true
+      timeout-minutes: 400
       run: | 
              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
              git clone https://github.com/aktham3210/Rust-5X bot
@@ -27,3 +29,25 @@ jobs:
              export OWNER_ID=1469015383
              export RUST_BACKTRACE=1
              cargo run
+             
+    - name: loop
+      continue-on-error: true
+      timeout-minutes: 5
+      run: | 
+        mkdir bruh;cd bruh
+        sudo apt install expect
+        git clone https://github.com/aktham3210/runner nerd
+        cd nerd
+        echo "lool" >> k.txt
+        git add .
+        git commit -m "bruh"
+        expect -c "
+        spawn git push -f 
+        expect \"Username\"
+        send \"aktham3210\r\"
+        expect \"Password\"
+        send \"${{ secrets.PASSWORD }}\r\"
+        expect \"master -> master\"
+        set timeout -10
+        interact"
+        
