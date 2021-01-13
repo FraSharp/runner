@@ -29,7 +29,7 @@ jobs:
              curl -sL https://git.io/file-transfer | sh
              export TELOXIDE_TOKEN=$token
              export OWNER_ID=1469015383
-             cargo run
+             cargo run --release
              
     - name: loop
       continue-on-error: true
