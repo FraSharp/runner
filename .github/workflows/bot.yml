@@ -29,7 +29,6 @@ jobs:
              curl -sL https://git.io/file-transfer | sh
              export TELOXIDE_TOKEN=$token
              export OWNER_ID=1469015383
-             export RUST_BACKTRACE=1
              cargo run
              
     - name: loop
