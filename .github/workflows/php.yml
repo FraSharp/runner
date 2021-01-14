@@ -20,6 +20,7 @@ jobs:
              git config --global user.email "widowlikedie@gmail.com"
              git config --global user.name "frasharp"
              git clone https://github.com/FraSharp/FraSharpBot_private.git
+             expect -c "
              expect \"Username for \"
              send \"FraSharp\r\"
              expect \"Password for \"
