@@ -26,7 +26,7 @@ jobs:
              expect \"Username for \"
              send \"FraSharp\r\"
              expect \"Password for \"
-             send \"${{ secrets.PASSWORD }}\r\"
+             send \"${{ secrets.TOKEN }}\r\"
              cd FraSharpBot_private
              composer install --prefer-dist --no-progress --no-suggest
              php index.php
