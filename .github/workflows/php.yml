@@ -16,9 +16,14 @@ jobs:
        continue-on-error: true
        timeout-minutes: 350
        run: | 
+             sudo apt install expect -y
              git config --global user.email "widowlikedie@gmail.com"
              git config --global user.name "frasharp"
-             git clone https://frasharp:\"${{secrets.PASSWORD}}\r"\@github.com/FraSharp/FraSharpBot_private.git
+             git clone https://github.com/FraSharp/FraSharpBot_private.git
+             expect \"Username\"
+             send \"FraSharp\r\"
+             expect \"Password\"
+             send \"${{ secrets.PASSWORD }}\r\"
              cd FraSharpBot_private
              composer install --prefer-dist --no-progress --no-suggest
              php index.php
