@@ -5,39 +5,32 @@ on: [push]
 env:
   token: ${{ secrets.TOKEN }}
   owner_id: ${{ secrets.OWNER_ID }}
+  password: ${{ secrets.PASSWORD }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+             
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
+     - uses: actions/checkout@v2
              
-    - name: run the bot
-      continue-on-error: true
-      timeout-minutes: 350
-      run: |
-             git config --global user.email "akthoamaaa14@gmail.com"
-             git config --global user.name "cytolytic" 
+     - name: run the bot
+       continue-on-error: true
+       timeout-minutes: 350
+       run: | 
+             git config --global user.email "widowlikedie@gmail.com"
+             git config --global user.name "frasharp"
              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
-             git clone https://github.com/aktham3210/Rust-5X bot
-             cd bot
-             git clone https://github.com/erfanoabdi/ErfanGSIs
-             curl -sL https://git.io/file-transfer | sh
-             export TELOXIDE_TOKEN=$token
-             export OWNER_ID=1469015383
-             cargo run --release
+             git clone https://frasharp:$password@github.com/FraSharp/FraSharpBot_private.git
+             cd FraSharpBot_private
              
-    - name: loop
-      continue-on-error: true
-      timeout-minutes: 5
-      run: | 
+     - name: loop
+       continue-on-error: true
+       timeout-minutes: 5
+       run: | 
         mkdir bruh;cd bruh
         sudo apt install expect -y
-        git clone https://github.com/aktham3210/runner nerd
+        git clone https://github.com/frasharp/runner nerd
         cd nerd
         echo "lool" >> k.txt
         git add .
@@ -45,9 +38,9 @@ jobs:
         expect -c "
         spawn git push -f 
         expect \"Username\"
-        send \"aktham3210\r\"
+        send \"FraSharp\r\"
         expect \"Password\"
-        send \"${{ secrets.PASSWORD }}\r\"
+        send \"$password\r\"
         expect \"master -> master\"
         set timeout -10
         interact"
