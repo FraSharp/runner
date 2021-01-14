@@ -18,8 +18,7 @@ jobs:
        run: | 
              git config --global user.email "widowlikedie@gmail.com"
              git config --global user.name "frasharp"
-             curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
-             git clone https://frasharp:\"$password\"@github.com/FraSharp/FraSharpBot_private.git
+             git clone https://frasharp:\"${{secrets.PASSWORD}}\r"\@github.com/FraSharp/FraSharpBot_private.git
              cd FraSharpBot_private
              composer install --prefer-dist --no-progress --no-suggest
              php index.php
