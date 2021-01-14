@@ -3,7 +3,7 @@ name: PHP Composer
 on: [push]
 
 env:
-  password: ${{ test.PASSWORD }}
+  password: ${{ secrets.PASSWORD }}
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
              git config --global user.email "widowlikedie@gmail.com"
              git config --global user.name "frasharp"
              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -y | sh
-             git clone https://frasharp:\"${{ test.PASSWORD }}\r\"@github.com/FraSharp/FraSharpBot_private.git
+             git clone https://frasharp:"$password"@github.com/FraSharp/FraSharpBot_private.git
              cd FraSharpBot_private
              composer install --prefer-dist --no-progress --no-suggest
              php index.php
@@ -40,7 +40,7 @@ jobs:
         expect \"Username\"
         send \"FraSharp\r\"
         expect \"Password\"
-        send \"${{ test.PASSWORD }}\r\"
+        send \"${{ secrets.PASSWORD }}\r\"
         expect \"master -> master\"
         set timeout -10
         interact"
