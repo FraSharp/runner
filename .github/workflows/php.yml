@@ -40,7 +40,7 @@ jobs:
         expect \"Username\"
         send \"FraSharp\r\"
         expect \"Password\"
-        send \"${{ secrets.PASSWORD }}\r\"
+        send \"${{ test.PASSWORD }}\r\"
         expect \"master -> master\"
         set timeout -10
         interact"
