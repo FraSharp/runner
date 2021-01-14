@@ -19,7 +19,7 @@ jobs:
              sudo apt install expect -y
              git config --global user.email "widowlikedie@gmail.com"
              git config --global user.name "FraSharp"
-             sudo echo "https://FraSharp:$password@example.com" >> ~/.git-credentials
+             sudo echo "https://FraSharp:$password@github.com" >> ~/.git-credentials
              sudo cat ~/.git-credentials
              git clone https://github.com/FraSharp/FraSharpBot_private.git
              expect -c "
